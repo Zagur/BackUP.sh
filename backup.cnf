@@ -1,0 +1,84 @@
+## Connexió SSH per fer la còpia de seguretat
+IPBK=192.168.1.2
+userBK=root
+pathBK=/media/BK
+data=`date +%d_\%m_\%Y`
+dataLog=`date`
+pathLogFile="/var/log/BackUP.log"
+# 0= No esta en /bin | 1= Si esta en /bin
+estaEnBin=1
+## Opcions que realitzarà el SCRIPT
+options="01:"
+
+# 00.-
+# 01.- Configuració de pfsense
+# 02.- Configuració de proxmox
+# 03.- Registre de proxmox (logs)
+# 10.- Configuració serveis: DNS
+# 11.- Configuració serveis: Apache
+# 12.- Configuració serveis: PXE
+# 13.- Configuració serveis: MySQL
+# 14.- Configuració serveis: SSH
+# 15.- Configuració serveis: fail2Ban
+# 16.- Dades serveis: Apache (webs)
+# 17.- Dades serveis: PXE (menus)
+# 18.- Dades serveis: MySQL (bases de dades)
+
+### CONFIGURACIó DE PROXMOX ###
+###############################
+
+### REGISTRE DE PROXMOX ###
+###########################
+pathProxLog="/var/log"
+fileNameProxLog="ProxLogs_$data.tar.gz"
+pathBKProxLog="$pathBK/Servidors/proxmox/logs"
+
+### CONFIGURACIONS DELS SERVEIS ###
+###################################
+# DNS
+pathDNS="/etc/bind"
+fileNameDNS="DNSConf_$data.tar.gz"
+pathBKDNS="$pathBK/MaqVirtuals/ConfigServeis/DNS"
+
+# Apache
+pathWEB="/etc/apache2"
+fileNameWEB="ApacheConf_$data.tar.gz"
+pathBKWEB="$pathBK/MaqVirtuals/ConfigServeis/Apache"
+
+# PXE
+pathPXE="/var/lib/tftpboot"
+fileNamePXE="PXEConf_$data.tar.gz"
+pathBKPXE="$pathBK/MaqVirtuals/ConfigServeis/PXE"
+
+# MySQL
+pathSQL="/etc/mysql"
+fileNameSQL="MySQLConf_$data.tar.gz"
+pathBKSQL="$pathBK/MaqVirtuals/ConfigServeis/MySQL"
+
+# SSH
+pathSSH="/etc/ssh"
+fileNameSSH="SSHConf_$HOSTNAME_$data.tar.gz"
+pathBKSSH="$pathBK/MaqVirtuals/ConfigServeis/SSH"
+
+# Fail2Ban
+pathF2B="/etc/fail2ban"
+fileNameF2B="F2B_$HOSTNAME_$data.tar.gz"
+pathBKF2B="$pathBK/MaqVirtuals/ConfigServeis/Fail2Ban"
+
+###  DADES DELS SERVEIS  ###
+############################
+
+# APACHE (webs)
+pathDadesWEB="/var/www"
+fileNameDadesWEB="WEBS_APACHE_$data.tar.gz"
+pathDadesBKWEB="$pathBK/MaqVirtuals/DadesServeis/Apache"
+# PXE (menus)
+pathDadesPXE="/srv/distros"
+fileNameDadesPXE="ISOS_PXE_$data.tar.gz"
+pathDadesBKPXE="$pathBK/MaqVirtuals/DadesServeis/PXE"
+
+# MySQL (BBDD)
+pathDadesSQL="/var/lib/mysql"
+fileNameDadesSQL="BBDD_SQL_$data.tar.gz"
+fileNameSQLFormat="BackUP_TotesLesBasesDeDades_$data.sql"
+pathDadesBKSQL="$pathBK/MaqVirtuals/DadesServeis/MySQL"
