@@ -88,6 +88,12 @@ do
         num=`echo $options | cut -d":" -f$count`
 
         case $num in
+        00)
+                echo "BackUP.sh s'ha instal·lat correctament!"
+                echo ""
+                echo "A partir d'ara pots executar BackUP.sh com un script del sistema"
+                echo ""
+        ;;
         01) # Configuració
                 echo "HOLA"
         ;;
