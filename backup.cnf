@@ -6,7 +6,7 @@ data=`date +%d_\%m_\%Y`
 dataLog=`date`
 pathLogFile="/var/log/BackUP.log"
 # 0= No esta en /bin | 1= Si esta en /bin
-estaEnBin=1
+estaEnBin=0
 
 # CRONTAB
 #       min hora dia mes
@@ -15,8 +15,7 @@ addToCron="5 00 * * * BackUP.sh"
 ## Opcions que realitzarà el SCRIPT
 options="00:"
 
-
-# 00.-
+# 00.- Instal·lació de BackUP
 # 01.- Configuració de pfsense
 # 02.- Configuració de proxmox
 # 03.- Registre de proxmox (logs)
