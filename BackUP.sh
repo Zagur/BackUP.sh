@@ -60,6 +60,13 @@ function posarABin {
         fi
 }
 
+function afegirCrontab {
+
+        (crontab -u root -l; echo "$addToCron" ) | crontab -u root -
+        echo "$dataLog - CRONTAB -  S'ha afegit -> $addToCron" >> $pathLogFile
+}
+
+
 ### PROGRAMA PRINCIPAL ###
 ##########################
 
