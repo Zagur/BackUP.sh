@@ -49,7 +49,7 @@ function posarABin {
         # Copio la nova versió a /bin i es podrà executar com una altre comanda
         chmod 700 $0
         chown root:root $0
-        head -15 $0 | sed -i 's/source /etc/backup.cnf/source \/etc\/backup.cnf/g' $0 >> $0
+        head -15 $0 | sed -i 's/source backup.cnf/source \/etc\/backup.cnf/g' $0 >> $0
         cp $0 /bin/
         # Modifiquem la variable estaEnBin per a que no s'executi sempre aquesta funció
         cat backup.cnf | sed -i 's/estaEnBin=0/estaEnBin=1/g' backup.cnf >> backup.cnf
@@ -73,6 +73,7 @@ function afegirCrontab {
 if [ "$estaEnBin" == 0  ]
 then
         posarABin
+        afegirCrontab
 fi
 
 # maxChar és un valor, wc -c mostra el nombre
