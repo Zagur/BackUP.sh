@@ -165,7 +165,7 @@ do
                 registreLog $fileNameDadesSQL $pathDadesBKSQL
 
                 exportarBBDD $fileNameSQLFormat
-                enviarDadesSSH $fileNamesSQLFormat $pathDadesBKSQL
+                enviarDadesSSH $fileNameSQLFormat $pathDadesBKSQL
                 eliminaFitxers $fileNameSQLFormat
                 registreLog $fileNameSQLFormat $pathDadesBKSQL
         ;;
