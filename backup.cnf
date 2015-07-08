@@ -13,7 +13,7 @@ estaEnBin=1
 addToCron="5 00 * * * BackUP.sh"
 
 ## Opcions que realitzarà el SCRIPT
-options="01:"
+options="00:"
 
 
 # 00.-
