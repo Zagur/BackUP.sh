@@ -6,7 +6,7 @@ data=`date +%d_\%m_\%Y`
 dataLog=`date`
 pathLogFile="/var/log/BackUP.log"
 # 0= No esta en /bin | 1= Si esta en /bin
-estaEnBin=1
+estaEnBin=0
 ## Opcions que realitzarà el SCRIPT
 options="01:"
 
