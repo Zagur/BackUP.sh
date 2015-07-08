@@ -3,8 +3,7 @@ Aquest script realitza les còpies de seguretat de tots els sistemes de Can Fuga
 
 # Install
 
-chmod 755 BackUP.sh
-./BackUP.sh
+ chmod 755 BackUP.sh && ./BackUP.sh
 
 # Use on cron
 
