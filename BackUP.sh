@@ -103,7 +103,7 @@ do
         03) # Registre de proxmox (logs)
                 comprimirDir $fileNameProxLog $pathProxLog
                 enviarDadesSSH $fileNameProxLog $pathBKProxLog
-                eliminarFitxers $fileNameProxLog
+                eliminaFitxers $fileNameProxLog
                 registreLog $fileNameProxLog $pathWeb
         ;;
 
@@ -136,43 +136,42 @@ do
         14) ## Configuració serveis: SSH
                 comprimirDir $fileNameSSH $pathSSH
                 enviarDadesSSH $fileNameSSH $pathBKSSH
-                eliminarFitxers $fileNameSSH
+                eliminaFitxers $fileNameSSH
                 registreLog $fileNameSSH $pathBKSSH
         ;;
         15) ## Configuració serveis: F2B
                 comprimirDir $fileNameF2B $pathF2B
                 enviarDadesSSH $fileNameF2B $pathBKF2B
-                eliminarFitxers $fileNameF2B
+                eliminaFitxers $fileNameF2B
                 registreLog $fileNameF2B $pathBKF2B
         ;;
         16) ## Dades dels serveis: Apache (webs)
                 comprimirDir $fileNameDadesWEB $pathDadesWEB
                 enviarDadesSSH $fileNameDadesWEB $pathDadesBKWEB
-                eliminarFitxers $fileNameDadesWEB
+                eliminaFitxers $fileNameDadesWEB
                 registreLog $fileNameDadesWEB $pathDadesBKWEB
         ;;
         17) ## Dades dels serveis: PXE (Menus)
                 comprimirDir $fileNameDadesPXE $pathDadesPXE
                 enviarDadesSSH $fileNameDadesPXE $pathDadesBKPXE
-                eliminarFitxers $fileNameDadesPXE
+                eliminaFitxers $fileNameDadesPXE
                 registreLog $fileNameDadesPXE $pathDadesBKPXE
         ;;
         18) ## Dades dels serveis: MySQL (BBDD)
                 comprimirDir $fileNameDadesSQL $pathDadesSQL
                 enviarDadesSSH $fileNameDadesSQL $pathDadesBKSQL
-                eliminarFitxers $fileNameDadesSQL
+                eliminaFitxers $fileNameDadesSQL
                 registreLog $fileNameDadesSQL $pathDadesBKSQL
 
                 exportarBBDD $fileNameSQLFormat
                 enviarDadesSSH $fileNamesSQLFormat $pathDadesBKSQL
-                eliminarFitxers $fileNameSQLFormat
+                eliminaFitxers $fileNameSQLFormat
                 registreLog $fileNameSQLFormat $pathDadesBKSQL
         ;;
 
 
-        *)
-                # marcarhoallog
-                echo "Cap opció"
+        *) # Cap Opció
+                echo "$dataLog - $num -  ALERTA: Cap opció" >> $pathLogFile
         ;;
         esac
         count=$(( $count + 1 ))
