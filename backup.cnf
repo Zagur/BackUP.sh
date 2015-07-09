@@ -62,8 +62,11 @@ pathBKSQL="$pathBK/MaqVirtuals/ConfigServeis/MySQL"
 
 # SSH
 pathSSH="/etc/ssh"
-fileNameSSH="SSHConf_$HOSTNAME_$data.tar.gz"
-pathBKSSH="$pathBK/MaqVirtuals/ConfigServeis/SSH"
+fileNameSSH="SSHConf_$data.tar.gz"
+pathBKSSHweb="$pathBK/MaqVirtuals/ConfigServeis/SSH/web"
+pathBKSSHdns="$pathBK/MaqVirtuals/ConfigServeis/SSH/dns"
+pathBKSSHpxe="$pathBK/MaqVirtuals/ConfigServeis/SSH/pxe"
+pathBKSSHcacti="$pathBK/MaqVirtuals/ConfigServeis/SSH/cacti"
 
 # Fail2Ban
 pathF2B="/etc/fail2ban"
