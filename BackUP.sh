@@ -1,6 +1,6 @@
 #!/bin/bash
 # Jesús Camacho
-# Versió: 1.0
+# Versió: 0.1
 # Aquest script realitza les còpies de seguretat de tots els sistemes de Can Fugarolas
 
 ### VARIABLES ###
